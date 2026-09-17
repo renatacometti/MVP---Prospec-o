@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Comparativo de condições de financiamento — SISCAP" />
+    <title>SISCAP | Comparativo de Condições</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="comparativo.css" />
+    <script src="comparativo.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="home-link" href="index.html" aria-label="Página inicial">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10M9 20v-6h6v6" /></svg>
+        </a>
+        <a href="#">Pesquisa de Fontes de Financiamento</a>
+        <a href="index.html">Condições de Financiamento</a>
+        <a class="active" href="comparativo.html" aria-current="page">Comparativo de Condições</a>
+        <a href="#">Prospecção</a>
+      </nav>
+    </header>
+
+    <main class="page comparison-page">
+      <section class="page-intro" aria-labelledby="page-title">
+        <div>
+          <h1 id="page-title">Comparativo de Condições</h1>
+          <p>Visualize e compare as condições retornadas pelas instituições financeiras para o programa selecionado.</p>
+        </div>
+      </section>
+
+      <section class="research-summary comparison-summary" aria-label="Resumo da pesquisa">
+        <dl>
+          <div><dt>Pesquisa</dt><dd>#000125</dd></div>
+          <div><dt>Programa</dt><dd>Programa de Financiamento XYZ</dd></div>
+          <div><dt>Valor pretendido</dt><dd>R$ 1.500.000,00</dd></div>
+          <div><dt>Data da pesquisa</dt><dd>17/09/2026</dd></div>
+        </dl>
+      </section>
+
+      <div class="comparison-toolbar">
+        <div class="comparison-controls">
+          <label class="toggle-control"><input id="show-selected" type="checkbox" checked /> Mostrar apenas selecionadas (<span id="selected-count">4</span>)</label>
+          <button class="button button--secondary" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z" /></svg>Configurar colunas</button>
+        </div>
+      </div>
+
+      <section class="matrix-card" aria-label="Matriz comparativa das condições">
+        <div class="comparison-matrix" id="comparison-matrix">
+          <div class="matrix-cell matrix-heading criterion-heading">Critério</div>
+          <div class="matrix-cell matrix-heading agency-heading" data-agency="bb">
+            <label><input class="agency-selector" type="checkbox" data-target="bb" checked /><span class="agency-logo agency-logo--bb">BANCO DO BRASIL</span></label>
+          </div>
+          <div class="matrix-cell matrix-heading agency-heading" data-agency="caixa">
+            <label><input class="agency-selector" type="checkbox" data-target="caixa" checked /><span class="agency-logo agency-logo--caixa">CAIXA</span></label>
+          </div>
+          <div class="matrix-cell matrix-heading agency-heading" data-agency="itau">
+            <label><input class="agency-selector" type="checkbox" data-target="itau" checked /><span class="agency-logo agency-logo--itau">Itaú</span></label>
+          </div>
+          <div class="matrix-cell matrix-heading agency-heading" data-agency="santander">
+            <label><input class="agency-selector" type="checkbox" data-target="santander" checked /><span class="agency-logo agency-logo--santander">Santander</span></label>
+          </div>
+
+          <div class="matrix-group">Dados do Programa/Projeto</div>
+          <div class="matrix-cell criterion">Nome Completo do Programa/Projeto</div><div class="matrix-cell" data-agency="bb">Programa de Financiamento XYZ</div><div class="matrix-cell" data-agency="caixa">Programa de Financiamento XYZ</div><div class="matrix-cell" data-agency="itau">Programa de Financiamento XYZ</div><div class="matrix-cell" data-agency="santander">Programa de Financiamento XYZ</div>
+          <div class="matrix-cell criterion">Sigla do Projeto</div><div class="matrix-cell" data-agency="bb">PF XYZ</div><div class="matrix-cell" data-agency="caixa">PF XYZ</div><div class="matrix-cell" data-agency="itau">PF XYZ</div><div class="matrix-cell" data-agency="santander">PF XYZ</div>
+          <div class="matrix-cell criterion">Valor (R$)</div><div class="matrix-cell" data-agency="bb">R$ 1.500.000,00</div><div class="matrix-cell" data-agency="caixa">R$ 1.500.000,00</div><div class="matrix-cell" data-agency="itau">R$ 1.500.000,00</div><div class="matrix-cell" data-agency="santander">R$ 1.500.000,00</div>
+          <div class="matrix-cell criterion">Órgão de Origem</div><div class="matrix-cell" data-agency="bb">Secretaria de Economia e Planejamento</div><div class="matrix-cell" data-agency="caixa">Secretaria de Economia e Planejamento</div><div class="matrix-cell" data-agency="itau">Secretaria de Economia e Planejamento</div><div class="matrix-cell" data-agency="santander">Secretaria de Economia e Planejamento</div>
+
+          <div class="matrix-group">Condições de Financiamento</div>
+          <div class="matrix-cell criterion">Linha de crédito</div><div class="matrix-cell" data-agency="bb">Finame</div><div class="matrix-cell" data-agency="caixa">BNDES Automático</div><div class="matrix-cell" data-agency="itau">Crédito Empresarial</div><div class="matrix-cell" data-agency="santander">Programa ABC</div>
+          <div class="matrix-cell criterion">Valor máximo do crédito</div><div class="matrix-cell" data-agency="bb">R$ 1.500.000,00</div><div class="matrix-cell" data-agency="caixa">R$ 1.500.000,00</div><div class="matrix-cell" data-agency="itau">R$ 1.000.000,00</div><div class="matrix-cell" data-agency="santander">R$ 1.500.000,00</div>
+          <div class="matrix-cell criterion">Contrapartida</div><div class="matrix-cell" data-agency="bb">20%</div><div class="matrix-cell" data-agency="caixa">15%</div><div class="matrix-cell" data-agency="itau">20%</div><div class="matrix-cell" data-agency="santander">10%</div>
+          <div class="matrix-cell criterion">Juros aplicáveis</div><div class="matrix-cell emphasis" data-agency="bb">1,20% a.m.</div><div class="matrix-cell emphasis" data-agency="caixa">1,05% a.m.</div><div class="matrix-cell emphasis" data-agency="itau">12,50% a.a.</div><div class="matrix-cell emphasis" data-agency="santander">1,10% a.m.</div>
+          <div class="matrix-cell criterion">Juros de carência</div><div class="matrix-cell" data-agency="bb">1,20% a.m.</div><div class="matrix-cell" data-agency="caixa">1,05% a.m.</div><div class="matrix-cell" data-agency="itau">12,50% a.a.</div><div class="matrix-cell" data-agency="santander">1,10% a.m.</div>
+          <div class="matrix-cell criterion">Juros de amortização</div><div class="matrix-cell" data-agency="bb">1,20% a.m.</div><div class="matrix-cell" data-agency="caixa">1,05% a.m.</div><div class="matrix-cell" data-agency="itau">12,50% a.a.</div><div class="matrix-cell" data-agency="santander">1,10% a.m.</div>
+          <div class="matrix-cell criterion">Comissão de compromisso</div><div class="matrix-cell" data-agency="bb">0,50%</div><div class="matrix-cell" data-agency="caixa">0,40%</div><div class="matrix-cell" data-agency="itau">0,45%</div><div class="matrix-cell" data-agency="santander">0,50%</div>
+          <div class="matrix-cell criterion">Comissão de avaliação</div><div class="matrix-cell" data-agency="bb">R$ 2.500,00</div><div class="matrix-cell" data-agency="caixa">R$ 2.000,00</div><div class="matrix-cell" data-agency="itau">R$ 1.500,00</div><div class="matrix-cell" data-agency="santander">R$ 2.000,00</div>
+          <div class="matrix-cell criterion">Taxa de abertura</div><div class="matrix-cell" data-agency="bb">R$ 1.000,00</div><div class="matrix-cell" data-agency="caixa">R$ 800,00</div><div class="matrix-cell" data-agency="itau">R$ 750,00</div><div class="matrix-cell" data-agency="santander">R$ 900,00</div>
+          <div class="matrix-cell criterion">Demais encargos e comissões</div><div class="matrix-cell" data-agency="bb">R$ 1.500,00</div><div class="matrix-cell" data-agency="caixa">R$ 700,00</div><div class="matrix-cell" data-agency="itau">R$ 500,00</div><div class="matrix-cell" data-agency="santander">R$ 1.100,00</div>
+          <div class="matrix-cell criterion">Prazo de carência</div><div class="matrix-cell" data-agency="bb">6 meses</div><div class="matrix-cell" data-agency="caixa">3 meses</div><div class="matrix-cell" data-agency="itau">12 meses</div><div class="matrix-cell" data-agency="santander">6 meses</div>
+          <div class="matrix-cell criterion">Prazo de amortização</div><div class="matrix-cell" data-agency="bb">54 meses</div><div class="matrix-cell" data-agency="caixa">45 meses</div><div class="matrix-cell" data-agency="itau">60 meses</div><div class="matrix-cell" data-agency="santander">54 meses</div>
+          <div class="matrix-cell criterion">Prazo total</div><div class="matrix-cell" data-agency="bb">60 meses</div><div class="matrix-cell" data-agency="caixa">48 meses</div><div class="matrix-cell" data-agency="itau">72 meses</div><div class="matrix-cell" data-agency="santander">60 meses</div>
+          <div class="matrix-cell criterion">Garantia</div><div class="matrix-cell" data-agency="bb">Aval e garantia real</div><div class="matrix-cell" data-agency="caixa">Garantia real</div><div class="matrix-cell" data-agency="itau">Aval dos sócios</div><div class="matrix-cell" data-agency="santander">Sujeita à análise</div>
+          <div class="matrix-cell criterion">Outros</div><div class="matrix-cell observations" data-agency="bb">Condições válidas para empresas do setor industrial.</div><div class="matrix-cell observations" data-agency="caixa">Sujeito à análise de crédito.</div><div class="matrix-cell observations" data-agency="itau">Condições especiais para investimento em inovação.</div><div class="matrix-cell observations" data-agency="santander">Sujeito à disponibilidade de recursos.</div>
+        </div>
+      </section>
+
+      <section class="financial-card" aria-labelledby="financial-title">
+        <div class="financial-heading">
+          <div><h2 id="financial-title">Comparação Financeira <small>(estimativa)</small></h2><p>Cálculos estimados com base no valor pretendido e nas condições informadas.</p></div>
+          <button class="button button--secondary" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 7h.01" /></svg>Ver metodologia de cálculo</button>
+        </div>
+        <div class="financial-table-wrap">
+          <table class="financial-table">
+            <thead><tr><th>Indicador</th><th>Banco do Brasil</th><th>Caixa</th><th>Itaú</th><th>Santander</th></tr></thead>
+            <tbody>
+              <tr><td>Custo efetivo estimado (a.a.)</td><td>15,39%</td><td>14,82%</td><td class="best-value">13,74%</td><td>15,10%</td></tr>
+              <tr><td>Valor da parcela (estimada)</td><td>R$ 36.547,21</td><td>R$ 35.102,30</td><td>R$ 29.841,17</td><td>R$ 35.921,44</td></tr>
+              <tr><td>Valor total estimado</td><td>R$ 2.192.832,60</td><td>R$ 2.107.338,12</td><td>R$ 2.148.564,24</td><td>R$ 2.155.286,40</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="page-actions comparison-actions">
+        <a class="button button--secondary" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>Voltar para Condições de Financiamento</a>
+        <button class="button button--primary" type="button">Ir para Prospecção<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
+      </div>
+    </main>
+  </body>
+</html>

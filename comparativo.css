@@ -1,0 +1,261 @@
+.comparison-page {
+  padding-top: 15px;
+}
+
+.comparison-summary dl {
+  grid-template-columns: .8fr 2fr 1.2fr 1fr;
+}
+
+.comparison-summary dd {
+  font-weight: 500;
+}
+
+.comparison-summary div:first-child dd,
+.comparison-summary div:nth-child(3) dd {
+  font-weight: 700;
+}
+
+.comparison-toolbar {
+  margin-top: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.comparison-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
+}
+
+.toggle-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #536079;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.toggle-control input,
+.agency-selector {
+  accent-color: #1769e8;
+}
+
+.matrix-card {
+  margin-top: 10px;
+  overflow-x: auto;
+  border: 1px solid #d9e1eb;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.comparison-matrix {
+  min-width: 1000px;
+  display: grid;
+  grid-template-columns: 190px repeat(4, minmax(185px, 1fr));
+}
+
+.matrix-cell {
+  min-height: 30px;
+  padding: 7px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #d9e1eb;
+  border-bottom: 1px solid #d9e1eb;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.matrix-cell:nth-child(5n) {
+  border-right: 0;
+}
+
+.matrix-heading {
+  min-height: 56px;
+  background: linear-gradient(#f8fafc, #edf2f7);
+  font-weight: 700;
+}
+
+.criterion-heading {
+  justify-content: flex-start;
+  font-size: 11px;
+}
+
+.agency-heading {
+  position: relative;
+  border-top: 2px solid #79affb;
+}
+
+.agency-heading label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agency-selector {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.agency-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.agency-logo--bb {
+  padding: 5px 9px;
+  color: #05388b;
+  background: #ffe600;
+}
+
+.agency-logo--caixa {
+  color: #0877c9;
+  font-size: 19px;
+  font-style: italic;
+}
+
+.agency-logo--itau {
+  padding: 5px 7px;
+  border-radius: 6px;
+  color: #ffe000;
+  background: #03449d;
+  font-size: 17px;
+}
+
+.agency-logo--santander {
+  color: #e5232a;
+  font-size: 17px;
+}
+
+.matrix-group {
+  grid-column: 1 / -1;
+  min-height: 27px;
+  padding: 6px 11px;
+  border-bottom: 1px solid #cbd7e6;
+  color: #275a9f;
+  background: #e9f1fc;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .35px;
+}
+
+.criterion {
+  justify-content: flex-start;
+  text-align: left;
+  font-weight: 600;
+  background: #f2f5f8;
+}
+
+.emphasis {
+  font-weight: 700;
+}
+
+.observations {
+  min-height: 50px;
+}
+
+.financial-card {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid #dfe5ec;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .85);
+}
+
+.financial-heading {
+  margin-bottom: 9px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.financial-heading h2 {
+  margin: 0 0 3px;
+  font-size: 14px;
+}
+
+.financial-heading h2 small {
+  color: #66758c;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.financial-heading p {
+  margin: 0;
+  color: #68758a;
+  font-size: 9px;
+}
+
+.financial-heading .button {
+  min-height: 32px;
+  font-size: 10px;
+}
+
+.financial-table-wrap {
+  overflow-x: auto;
+}
+
+.financial-table {
+  min-width: 800px;
+}
+
+.financial-table th,
+.financial-table td {
+  height: 27px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.financial-table th:first-child,
+.financial-table td:first-child {
+  text-align: left;
+}
+
+.best-value {
+  font-weight: 700;
+  background: #d7f7e4;
+}
+
+.comparison-actions {
+  margin-top: 13px;
+  padding-top: 0;
+}
+
+[data-agency].agency-hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .comparison-toolbar,
+  .financial-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .comparison-controls {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .comparison-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .comparison-summary dl {
+    grid-template-columns: 1fr;
+  }
+}
