@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Condições de financiamento — SISCAP" />
+    <title>SISCAP | Condições de Financiamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="home-link" href="#" aria-label="Página inicial">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10M9 20v-6h6v6" /></svg>
+        </a>
+        <a href="#">Pesquisa de Fontes de Financiamento</a>
+        <a class="active" href="#" aria-current="page">Condições de Financiamento</a>
+        <a href="#">Comparativo de Condições</a>
+        <a href="#">Prospecção</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="page-intro" aria-labelledby="page-title">
+        <div>
+          <h1 id="page-title">Condições de Financiamento</h1>
+          <p>Cadastre as condições e taxas retornadas pelas instituições financeiras para o programa pesquisado.</p>
+        </div>
+        <span class="status-badge">Em preenchimento</span>
+      </section>
+
+      <section class="research-summary" aria-label="Resumo da pesquisa">
+        <dl>
+          <div>
+            <dt><label for="research-number">Pesquisa</label></dt>
+            <dd><input id="research-number" name="research_number" type="text" value="#000125" /></dd>
+          </div>
+          <div>
+            <dt><label for="research-program">Programa</label></dt>
+            <dd><input id="research-program" name="research_program" type="text" value="Programa de Financiamento XYZ" /></dd>
+          </div>
+          <div>
+            <dt><label for="intended-amount">Valor pretendido</label></dt>
+            <dd>
+              <div class="summary-input-group">
+                <span>R$</span>
+                <input id="intended-amount" name="intended_amount" type="text" inputmode="decimal" value="1.500.000,00" />
+              </div>
+            </dd>
+          </div>
+          <div><dt>Data da pesquisa</dt><dd>17/09/2026</dd></div>
+        </dl>
+      </section>
+
+      <section class="results-card" aria-labelledby="results-title">
+        <h2 id="results-title">Retornos das Instituições Financeiras</h2>
+        <div class="results-toolbar">
+          <label class="search-box" for="institution-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+            <span class="sr-only">Pesquisar instituição</span>
+            <input id="institution-search" type="search" placeholder="Pesquisar instituição..." />
+          </label>
+          <button class="button button--primary" id="open-modal" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            Adicionar condição
+          </button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Agência de Fomento</th><th>Linha de Crédito</th><th>Juros aplicáveis</th><th>Moeda</th>
+                <th>Prazo total</th><th>Carência</th><th>Valor máximo</th><th>Amortização</th><th class="actions-heading">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="conditions-table-body">
+              <tr>
+                <td>Banco do Brasil</td><td>Finame</td><td>1,20% a.m.</td><td>BRL</td><td>60 meses</td><td>6 meses</td><td>R$ 1.500.000,00</td><td>54 meses</td>
+                <td class="row-actions"><button type="button" aria-label="Editar Banco do Brasil" title="Editar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.3-1 10.8-10.8-3.3-3.3L5 15.7zM14.7 6l3.3 3.3" /></svg></button><button type="button" aria-label="Excluir Banco do Brasil" title="Excluir"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5" /></svg></button></td>
+              </tr>
+              <tr>
+                <td>Caixa Econômica Federal</td><td>BNDES Automático</td><td>1,05% a.m.</td><td>BRL</td><td>48 meses</td><td>3 meses</td><td>R$ 1.500.000,00</td><td>45 meses</td>
+                <td class="row-actions"><button type="button" aria-label="Editar Caixa Econômica Federal" title="Editar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.3-1 10.8-10.8-3.3-3.3L5 15.7zM14.7 6l3.3 3.3" /></svg></button><button type="button" aria-label="Excluir Caixa Econômica Federal" title="Excluir"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5" /></svg></button></td>
+              </tr>
+              <tr>
+                <td>Itaú</td><td>Crédito Empresarial</td><td>12,50% a.a.</td><td>BRL</td><td>72 meses</td><td>12 meses</td><td>R$ 1.000.000,00</td><td>60 meses</td>
+                <td class="row-actions"><button type="button" aria-label="Editar Itaú" title="Editar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.3-1 10.8-10.8-3.3-3.3L5 15.7zM14.7 6l3.3 3.3" /></svg></button><button type="button" aria-label="Excluir Itaú" title="Excluir"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5" /></svg></button></td>
+              </tr>
+              <tr>
+                <td>Santander</td><td>Programa ABC</td><td>1,10% a.m.</td><td>BRL</td><td>60 meses</td><td>6 meses</td><td>R$ 1.500.000,00</td><td>54 meses</td>
+                <td class="row-actions"><button type="button" aria-label="Editar Santander" title="Editar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.3-1 10.8-10.8-3.3-3.3L5 15.7zM14.7 6l3.3 3.3" /></svg></button><button type="button" aria-label="Excluir Santander" title="Excluir"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5" /></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <span id="records-count">Exibindo 4 de 4 registros</span>
+          <nav class="pagination" aria-label="Paginação">
+            <button type="button" aria-label="Página anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
+            <button class="active" type="button" aria-current="page">1</button>
+            <button type="button" aria-label="Próxima página"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
+          </nav>
+        </div>
+      </section>
+
+      <div class="page-actions">
+        <button class="button button--secondary" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>Voltar para Pesquisa</button>
+        <button class="button button--primary" type="button">Comparar Condições<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="financing-modal" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <header class="modal__header">
+          <div><h2 id="modal-title">Adicionar condição de financiamento</h2><p id="modal-description" class="sr-only">Preencha os dados da condição de financiamento.</p></div>
+          <button class="icon-button" id="close-modal" type="button" aria-label="Fechar modal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg></button>
+        </header>
+
+        <form id="condition-form">
+          <div class="modal__body">
+            <div class="form-grid">
+              <div class="field field--half">
+                <label for="agency">Agência de Fomento <span>*</span></label>
+                <select id="agency" name="agency" required><option value="" selected disabled>Selecione...</option><option>Banco do Brasil</option><option>Caixa Econômica Federal</option><option>Itaú</option><option>Santander</option><option>Banestes</option><option>Bandes</option><option>BNDES</option></select>
+              </div>
+              <div class="field field--half"><label for="credit-line">Nome da Linha de Crédito <span>*</span></label><input id="credit-line" name="credit_line" type="text" required /></div>
+              <div class="field field--full"><label for="object">Objeto</label><textarea id="object" name="object" rows="2"></textarea></div>
+              <div class="field field--third"><label for="max-credit">Valor Máximo do Crédito</label><div class="input-group input-group--prefix"><span>R$</span><input id="max-credit" name="max_credit" type="text" inputmode="decimal" /></div></div>
+              <div class="field field--third"><label for="currency">Moeda <span>*</span></label><select id="currency" name="currency" required><option value="BRL">Real (BRL)</option><option value="USD">Dólar (USD)</option><option value="EUR">Euro (EUR)</option><option value="GBP">Libra (GBP)</option></select></div>
+              <div class="field field--third"><label for="counterpart">Contrapartida</label><div class="input-group"><input id="counterpart" name="counterpart" type="number" min="0" step="0.01" /><span>%</span></div></div>
+
+              <fieldset class="form-section">
+                <legend>Taxas</legend>
+                <div class="section-grid section-grid--rates">
+                  <div class="field"><label for="applicable-interest">Juros aplicáveis <span>*</span></label><div class="input-group"><input id="applicable-interest" name="applicable_interest" type="number" min="0" step="0.01" required /><span>%</span></div></div>
+                  <div class="field"><label for="interest-periodicity">Periodicidade <span>*</span></label><select id="interest-periodicity" name="interest_periodicity" required><option value="" selected disabled>Selecione...</option><option value="a.m.">Mensal</option><option value="a.a.">Anual</option></select></div>
+                  <div class="field"><label for="grace-interest">Juros de Carência</label><div class="input-group"><input id="grace-interest" name="grace_interest" type="number" min="0" step="0.01" /><span>%</span></div></div>
+                  <div class="field"><label for="amortization-interest">Juros de Amortização</label><div class="input-group"><input id="amortization-interest" name="amortization_interest" type="number" min="0" step="0.01" /><span>%</span></div></div>
+                  <div class="field"><label for="commitment-fee">Comissão de Compromisso</label><div class="input-group"><input id="commitment-fee" name="commitment_fee" type="number" min="0" step="0.01" /><span>%</span></div></div>
+                  <div class="field"><label for="evaluation-fee">Comissão de Avaliação</label><div class="input-group"><input id="evaluation-fee" name="evaluation_fee" type="number" min="0" step="0.01" /><span>%</span></div></div>
+                  <div class="field"><label for="opening-fee">Taxa de Abertura</label><div class="input-group input-group--prefix"><span>R$</span><input id="opening-fee" name="opening_fee" type="text" inputmode="decimal" /></div></div>
+                  <div class="field"><label for="other-fees">Demais Encargos e Comissões</label><input id="other-fees" name="other_fees" type="text" /></div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Prazos</legend>
+                <div class="section-grid section-grid--terms">
+                  <div class="field"><label for="grace-term">Carência</label><div class="input-group"><input id="grace-term" name="grace_term" type="number" min="0" /><span>meses</span></div></div>
+                  <div class="field"><label for="amortization-term">Amortização</label><div class="input-group"><input id="amortization-term" name="amortization_term" type="number" min="0" /><span>meses</span></div></div>
+                  <div class="field"><label for="total-term">Total <span>*</span></label><div class="input-group"><input id="total-term" name="total_term" type="number" min="1" required /><span>meses</span></div></div>
+                </div>
+              </fieldset>
+
+              <div class="field field--half"><label for="guarantee">Garantia</label><textarea id="guarantee" name="guarantee" rows="3"></textarea></div>
+              <div class="field field--half"><label for="other-information">Outras informações</label><textarea id="other-information" name="other_information" rows="3"></textarea></div>
+            </div>
+          </div>
+          <footer class="modal__footer">
+            <button class="button button--secondary" id="cancel-modal" type="button">Cancelar</button>
+            <button class="button button--primary" type="submit">Salvar condição</button>
+          </footer>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
